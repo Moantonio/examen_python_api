@@ -1,3 +1,10 @@
+# Git bash
+# virtualenv .venv
+# source .venv/Scripts/activate
+# pip install -r requirements.txt
+# pip install fastapi jinja2 uvicorn
+# Para correr el proyecto tengo que realizar: python main.py
+
 # examen_python_api
 1. Para qué se puede usar Python en lo que respecta a datos. Dar 5 casos y explicar brevemente
 Actualmente Python es un lenguaje de programación en lo que respecta a analisis de datos, dentro de ellos tenemos: Analisis de datos, Machine Learning, Automatización de procesos de datos, Analisis de Texto (NLP), visualización de datos.
