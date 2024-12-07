@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Eliminar Alumno{% endblock %}
+{% block content %}
+<h1>Confirmar Eliminación</h1>
+<div class="alert alert-danger" role="alert">
+    ¿Estás seguro de que deseas eliminar al alumno {{ alumno.nombre }} {{ alumno.apellido }}?
+</div>
+<form method="post" action="/alumnos/{{ alumno.id }}/delete">
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="/alumnos" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Detalle del Alumno{% endblock %}
+{% block content %}
+<h1>Detalles del Alumno</h1>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Nombre: {{ alumno.nombre }} {{ alumno.apellido }}</h5>
+        <p class="card-text"><strong>Aprobado:</strong> {{ "Sí" if alumno.aprobado else "No" }}</p>
+        <p class="card-text"><strong>Nota:</strong> {{ alumno.nota }}</p>
+        <p class="card-text"><strong>Fecha:</strong> {{ alumno.fecha }}</p>
+        <a href="/alumnos" class="btn btn-secondary">Regresar</a>
+        <a href="/alumnos/{{ alumno.id }}/edit" class="btn btn-warning">Editar</a>
+        <a href="/alumnos/{{ alumno.id }}/delete" class="btn btn-danger">Eliminar</a>
+    </div>
+</div>
+{% endblock %}

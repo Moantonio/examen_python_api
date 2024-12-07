@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Editar Alumno{% endblock %}
+{% block content %}
+<h1>Editar Alumno</h1>
+<form method="post" action="/alumnos/{{ alumno.id }}/edit" class="row g-3">
+    <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ alumno.nombre }}" required>
+    </div>
+    <div class="col-md-6">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="apellido" name="apellido" value="{{ alumno.apellido }}" required>
+    </div>
+    <div class="col-md-6">
+        <label for="aprobado" class="form-label">Aprobado</label>
+        <select class="form-select" id="aprobado" name="aprobado" required>
+            <option value="1" {% if alumno.aprobado %}selected{% endif %}>Sí</option>
+            <option value="0" {% if not alumno.aprobado %}selected{% endif %}>No</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="nota" class="form-label">Nota</label>
+        <input type="number" step="0.1" class="form-control" id="nota" name="nota" value="{{ alumno.nota }}" required>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <a href="/alumnos/{{ alumno.id }}" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

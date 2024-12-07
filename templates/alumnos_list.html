@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Lista de Alumnos{% endblock %}
+{% block content %}
+<h1 class="mb-4">Lista de Alumnos</h1>
+<a href="/alumnos/create" class="btn btn-primary mb-3">Crear Alumno</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Aprobado</th>
+            <th>Nota</th>
+            <th>Fecha</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for alumno in alumnos %}
+        <tr>
+            <td>{{ alumno.id }}</td>
+            <td>{{ alumno.nombre }}</td>
+            <td>{{ alumno.apellido }}</td>
+            <td>{{ "Sí" if alumno.aprobado else "No" }}</td>
+            <td>{{ alumno.nota }}</td>
+            <td>{{ alumno.fecha }}</td>
+            <td>
+                <a href="/alumnos/{{ alumno.id }}" class="btn btn-info btn-sm">Ver</a>
+                <a href="/alumnos/{{ alumno.id }}/edit" class="btn btn-warning btn-sm">Editar</a>
+                <a href="/alumnos/{{ alumno.id }}/delete" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
