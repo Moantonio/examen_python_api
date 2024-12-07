@@ -1,8 +1,9 @@
 # Git bash
-# virtualenv .venv
-# source .venv/Scripts/activate
-# pip install -r requirements.txt
-# pip install fastapi jinja2 uvicorn
+ virtualenv .venv
+ source .venv/Scripts/activate
+ pip install -r requirements.txt
+ pip install fastapi jinja2 uvicorn
+
 # Para correr el proyecto tengo que realizar: python main.py
 
 # examen_python_api
